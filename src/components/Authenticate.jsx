@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-export default function Authenticate({ token }) {
+export default function Authenticate(token) {
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
   const [username, setUsername] = useState(null);
@@ -12,7 +12,7 @@ export default function Authenticate({ token }) {
       console.log("Error: Token not found");
       return;
     } else {
-        setError(null);
+      setError(null);
     }
 
     try {
@@ -26,9 +26,9 @@ export default function Authenticate({ token }) {
       setSuccessMessage(response.data.message);
       setUsername(response.data.data.username);
       console.log(response.data.message);
-    } catch (error) {
-        setError("An error occurred", e);
-        console.log("An error occurred", e);
+    } catch (e) {
+      setError("An error occurred", e);
+      console.log("An error occurred", e);
     }
   };
 
