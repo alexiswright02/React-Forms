@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-export default function SignUpForm({ setToken }) {
+export default function SignUpForm(setToken) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
